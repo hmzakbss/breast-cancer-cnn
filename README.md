@@ -38,10 +38,11 @@ Eğitim Sonrası Grafiklerin Analizi:
 Sınıflandırma Raporu ve Karışıklık Matrisi Analizi:
 
 Karışıklık Matrisi (Confusion Matrix):
+<img width="448" height="470" alt="image" src="https://github.com/user-attachments/assets/04bf7e5e-5003-427d-91c8-b24748b3f661" />
 
 
 
 KAGGLE NOTEBOOK LİNKİ 
-
+https://www.kaggle.com/code/hamzaakbas/breast-cancer-cnn
 
 
