@@ -1,103 +1,41 @@
-🧬 Breast Cancer Classification with CNN
+Projenin Amacı
 
-Bu proje, mikroskop altında çekilmiş meme kanseri hücre görsellerini derin öğrenme yöntemleriyle sınıflandırmayı amaçlamaktadır.
-Amaç, bilgisayar destekli teşhis sistemlerine katkı sağlayarak erken tanıya yardımcı olmak 🚑.
+Bu projenin amacı, mikroskop altında çekilmiş meme kanseri hücre görsellerini derin öğrenme yöntemleri kullanarak normal (benign) ve tümörlü (malignant) hücreler olarak sınıflandırmaktır. Böylece bilgisayar destekli teşhis sistemlerine katkı sağlayarak erken tanıya yardımcı olunması hedeflenmektedir.
+*Veri Seti :* [Breast Histopathology Images](https://www.kaggle.com/datasets/paultimothymooney/breast-histopathology-images)  
+İçerik: Orijinal veri setinde 277.524 adet 50x50 piksel histopatoloji görüntüsü bulunmaktadır.
 
-📊 Veri Seti
+Bu Projede Kullanılan Alt Küme: Her sınıftan 5000 örnek seçilerek toplam 10.000 görüntü ile eğitim yapılmıştır.
 
-Veri Seti Adı: Breast Histopathology Images
+Sınıflar:
 
-Toplam Görsel (Orijinal): 277.524 adet (50x50 piksel histopatoloji görüntüsü)
+0: Benign (normal) hücreler
 
-Bu Projede Kullanılan Alt Küme:
+1: Malignant (tümörlü) hücreler
 
-Her sınıftan 5000 örnek → Toplam 10.000 görüntü
+⚙ Kullanılan Yöntemler
 
-🔹 Sınıflar
-Etiket	Açıklama
-0	Benign (Normal hücreler)
-1	Malignant (Tümörlü hücreler)
-⚙️ Kullanılan Yöntemler
+Ön İşleme:
 
-Veri Hazırlığı ve Ön İşleme
+Görseller 128x128 boyutuna ölçeklendi.
 
-os ve pandas kütüphaneleri ile görseller işlendi ve etiketlendi
+Piksel değerleri [0,1] aralığına normalize edildi.
 
-Dengeli veri seti oluşturuldu
+Eğitim ve test verisi %80 / %20 oranında ayrıldı.
 
-Eğitim/Test kümelerine ayrıldı
+Veri Artırma (Data Augmentation):
 
-Veri Çoğaltma (Data Augmentation)
+Döndürme, kaydırma, yakınlaştırma, yatay/dikey çevirme.
 
-Döndürme
+Model Mimarisi (CNN):
 
-Yatay/Dikey çevirme
+3 adet Conv2D + MaxPooling katmanı
 
-Yakınlaştırma
+1 adet Tam Bağlantılı (Dense) katman
 
-→ Amaç: Overfitting’i önlemek ve genelleme yeteneğini artırmak
+Dropout ile aşırı öğrenme (overfitting) azaltıldı.
 
-CNN Model Mimarisi
+Çıkış katmanında sigmoid aktivasyon fonksiyonu kullanıldı.
 
-3 Evrişim Katmanı (Conv2D)
+Hiperparametre Optimizasyonu:
 
-2 Tam Bağlantılı Katman (Dense)
-
-Aktivasyon: ReLU + Softmax
-
-Dropout ile düzenlileştirme
-
-Hiperparametre Optimizasyonu (Bonus 🚀)
-
-Keras Tuner ile filtre sayısı, nöron sayısı, dropout oranı optimize edildi
-
-En iyi model seçildi
-
-Model Değerlendirmesi
-
-Accuracy & Loss grafikleri
-
-Sınıflandırma raporu (Precision, Recall, F1-score)
-              precision    recall  f1-score   support
-
-    Benign       0.80      0.86      0.83      1000
- Malignant       0.85      0.79      0.82      1000
-
-    accuracy                           0.83      2000
-   macro avg       0.83      0.83      0.83      2000
-weighted avg       0.83      0.83      0.83      2000
-
-Karışıklık matrisi (Confusion Matrix)
-
-📈 Elde Edilen Sonuçlar
-✅ Test Verisi Doğruluk Oranı
-
-%83
-
-🔹 Sınıf Dağılımları
-<img width="448" height="470" alt="data-distribution" src="https://github.com/user-attachments/assets/39fc6b9d-4475-41e2-ac26-e9aab04b0d27" />
-
-🔹 Karışıklık Matrisi
-<img width="448" height="470" alt="confusion-matrix" src="https://github.com/user-attachments/assets/2ed5c3fc-baf9-4113-8bf4-e150abaf7e46" />
-
-                CNN MODEL MİMARİSİ
--------------------------------------------------
- Girdi (50x50x3)  →  Renkli hücre görüntüsü
--------------------------------------------------
- Conv2D (32 filtre, 3x3, ReLU) 
- MaxPooling2D (2x2)
--------------------------------------------------
- Conv2D (64 filtre, 3x3, ReLU)
- MaxPooling2D (2x2)
--------------------------------------------------
- Conv2D (128 filtre, 3x3, ReLU)
- MaxPooling2D (2x2)
--------------------------------------------------
- Flatten
- Dense (128 nöron, ReLU)
- Dropout (0.5)
- Dense (64 nöron, ReLU)
- Dropout (0.5)
--------------------------------------------------
- Çıkış Katmanı → Dense (2 sınıf, Softmax)
--------------------------------------------------
+keras-tuner ile filtre sayısı, dense katman nöron sayısı, dropout oranı ve optimizer seçenekleri test edilerek en iyi model seçildi.
