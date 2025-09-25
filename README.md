@@ -31,7 +31,7 @@ Test Setindeki Sınıf Dağılımları:
 <br>
 <img width="1014" height="451" alt="image" src="https://github.com/user-attachments/assets/50ef5035-f1be-437b-8bb3-0d620d5e49b3" />
 
-Sınıflandırma Raporu:
+
 <br>
 Sınıflandırma Raporu:
 <br>
