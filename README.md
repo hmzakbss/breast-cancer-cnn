@@ -23,13 +23,14 @@ Veri Çoğaltma (Data Augmentation): Modelin genelleme yeteneğini artırmak ve 
 
 Model Mimarisi: Proje için üç evrişim katmanı ve iki tam bağlantılı katman içeren temel bir CNN mimarisi oluşturulmuştur.
 
-Hiperparametre Optimizasyonu (Bonus Adım): Keras Tuner kullanılarak en uygun model mimarisi otomatik olarak bulunmuştur. Filtre sayısı, yoğun katman nöron sayısı ve Dropout oranı gibi hiperparametreler optimize edilmiştir. Bu sayede modelin performansı artırılmıştır.
+Hiperparametre Optimizasyonu: Keras Tuner kullanılarak en uygun model mimarisi otomatik olarak bulunmuştur. Filtre sayısı, yoğun katman nöron sayısı ve Dropout oranı gibi hiperparametreler optimize edilmiştir. Bu sayede modelin performansı artırılmıştır.
 
 Model Değerlendirmesi: Eğitilen model, doğruluk (accuracy) ve kayıp (loss) grafikleriyle, ayrıca ayrıntılı bir sınıflandırma raporu (precision, recall, f1-score) ve karışıklık matrisi (confusion matrix) ile değerlendirilmiştir
 
-Elde Edilen Sonuçlar
+Test Setindeki Sınıf Dağılımları:
+<br>
+<img width="1014" height="451" alt="image" src="https://github.com/user-attachments/assets/50ef5035-f1be-437b-8bb3-0d620d5e49b3" />
 
-En İyi Modelin Doğruluk Oranı (Test Verisi): 
 
 Eğitim Sonrası Grafiklerin Analizi: 
 
