@@ -40,6 +40,7 @@ Sınıflandırma Raporu ve Karışıklık Matrisi Analizi:
 
 
 Kaggle Notebook Linki
-
+<br>
+https://www.kaggle.com/code/hamzaakbas/breast-cancer-cnn
 
 
