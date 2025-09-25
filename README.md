@@ -37,8 +37,11 @@ Eğitim Sonrası Grafiklerin Analizi:
 
 Sınıflandırma Raporu ve Karışıklık Matrisi Analizi:
 
+
 Karışıklık Matrisi (Confusion Matrix):
-<img width="448" height="470" alt="image" src="https://github.com/user-attachments/assets/04bf7e5e-5003-427d-91c8-b24748b3f661" />
+
+
+<img width="448" height="470" alt="image" src="https://github.com/user-attachments/assets/2ed5c3fc-baf9-4113-8bf4-e150abaf7e46" />
 
 
 
