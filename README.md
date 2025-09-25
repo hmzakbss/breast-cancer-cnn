@@ -34,6 +34,9 @@ En İyi Modelin Doğruluk Oranı (Test Verisi):
 Eğitim Sonrası Grafiklerin Analizi: 
 
 Sınıflandırma Raporu ve Karışıklık Matrisi Analizi: 
+<br>
+<img width="448" height="470" alt="image" src="https://github.com/user-attachments/assets/086c49a5-2c16-4a71-b15d-878f78f9671c" />
+
 
 
 Kaggle Notebook Linki
