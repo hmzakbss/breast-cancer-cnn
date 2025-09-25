@@ -12,6 +12,7 @@ Bu Projede Kullanılan Alt Küme: Her sınıftan 5000 örnek seçilerek toplam 1
 
 Sınıflar:
 0: Benign (normal) hücreler
+
 1: Malignant (tümörlü) hücreler
 
 KULLANILAN YÖNTEMLER
