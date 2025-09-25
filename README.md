@@ -33,10 +33,22 @@ ELDE EDİLEN SONUÇLAR
 
 En İyi Modelin Doğruluk Oranı (Test Verisi):
 
-Eğitim Sonrası Grafiklerin Analizi: 
 
-Sınıflandırma Raporu ve Karışıklık Matrisi Analizi:
+Veri Setindeki Dağılımların Grafikleri: 
 
+<img width="448" height="470" alt="image" src="https://github.com/user-attachments/assets/39fc6b9d-4475-41e2-ac26-e9aab04b0d27" />
+
+
+Sınıflandırma Raporu Analizi:
+
+ precision    recall  f1-score   support
+
+      Benign       0.80      0.86      0.83      1000
+   Malignant       0.85      0.79      0.82      1000
+
+    accuracy                           0.83      2000
+   macro avg       0.83      0.83      0.83      2000
+weighted avg       0.83      0.83      0.83      2000
 
 Karışıklık Matrisi (Confusion Matrix):
 
