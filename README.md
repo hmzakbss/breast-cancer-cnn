@@ -31,10 +31,14 @@ Test Setindeki Sınıf Dağılımları:
 <br>
 <img width="1014" height="451" alt="image" src="https://github.com/user-attachments/assets/50ef5035-f1be-437b-8bb3-0d620d5e49b3" />
 
+Sınıflandırma Raporu:
+<br>
+Sınıflandırma Raporu:
+<br>
+<img width="423" height="167" alt="Ekran görüntüsü 2025-09-25 233941" src="https://github.com/user-attachments/assets/05498078-1277-41cf-be27-f3913a670615" />
 
-Eğitim Sonrası Grafiklerin Analizi: 
 
-Sınıflandırma Raporu ve Karışıklık Matrisi Analizi: 
+Karışıklık Matrisi Analizi: 
 <br>
 <img width="448" height="470" alt="image" src="https://github.com/user-attachments/assets/086c49a5-2c16-4a71-b15d-878f78f9671c" />
 
