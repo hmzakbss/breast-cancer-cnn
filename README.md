@@ -1,9 +1,12 @@
+Meme Kanseri Hücre Görselleri Sınıflandırması
+
 Projenin Amacı
 
 Bu projenin amacı, mikroskop altında çekilmiş meme kanseri hücre görsellerini derin öğrenme yöntemleri kullanarak normal (benign) ve tümörlü (malignant) hücreler olarak sınıflandırmaktır. Böylece bilgisayar destekli teşhis sistemlerine katkı sağlayarak erken tanıya yardımcı olunması hedeflenmektedir.
-*Veri Seti :* [Breast Histopathology Images](https://www.kaggle.com/datasets/paultimothymooney/breast-histopathology-images)  
-İçerik: Orijinal veri setinde 277.524 adet 50x50 piksel histopatoloji görüntüsü bulunmaktadır.
 
+Veri Seti Adı:** [Breast Histopathology Images](https://www.kaggle.com/datasets/paultimothymooney/breast-histopathology-images)  
+
+İçerik: Orijinal veri setinde 277.524 adet 50x50 piksel histopatoloji görüntüsü bulunmaktadır.
 Bu Projede Kullanılan Alt Küme: Her sınıftan 5000 örnek seçilerek toplam 10.000 görüntü ile eğitim yapılmıştır.
 
 Sınıflar:
@@ -12,30 +15,25 @@ Sınıflar:
 
 1: Malignant (tümörlü) hücreler
 
-⚙ Kullanılan Yöntemler
+Kullanılan Yöntemler
 
-Ön İşleme:
+Veri Hazırlığı ve Ön İşleme: Görüntüler, os ve pandas kütüphaneleri kullanılarak işlenmiş ve etiketlenmiştir. Dengeli bir veri seti oluşturulmuş ve veriler eğitim ile test kümelerine ayrılmıştır.
 
-Görseller 128x128 boyutuna ölçeklendi.
+Veri Çoğaltma (Data Augmentation): Modelin genelleme yeteneğini artırmak ve aşırı uydurmayı (overfitting) önlemek için döndürme, yatay/dikey çevirme ve yakınlaştırma gibi veri çoğaltma teknikleri uygulanmıştır.
 
-Piksel değerleri [0,1] aralığına normalize edildi.
+Model Mimarisi: Proje için üç evrişim katmanı ve iki tam bağlantılı katman içeren temel bir CNN mimarisi oluşturulmuştur.
 
-Eğitim ve test verisi %80 / %20 oranında ayrıldı.
+Hiperparametre Optimizasyonu (Bonus Adım): Keras Tuner kullanılarak en uygun model mimarisi otomatik olarak bulunmuştur. Filtre sayısı, yoğun katman nöron sayısı ve Dropout oranı gibi hiperparametreler optimize edilmiştir. Bu sayede modelin performansı artırılmıştır.
 
-Veri Artırma (Data Augmentation):
+Model Değerlendirmesi: Eğitilen model, doğruluk (accuracy) ve kayıp (loss) grafikleriyle, ayrıca ayrıntılı bir sınıflandırma raporu (precision, recall, f1-score) ve karışıklık matrisi (confusion matrix) ile değerlendirilmiştir
 
-Döndürme, kaydırma, yakınlaştırma, yatay/dikey çevirme.
+Elde Edilen Sonuçlar
 
-Model Mimarisi (CNN):
+En İyi Modelin Doğruluk Oranı (Test Verisi): 
+Eğitim Sonrası Grafiklerin Analizi: 
+Sınıflandırma Raporu ve Karışıklık Matrisi Analizi: 
 
-3 adet Conv2D + MaxPooling katmanı
+Kaggle Notebook Linki
 
-1 adet Tam Bağlantılı (Dense) katman
 
-Dropout ile aşırı öğrenme (overfitting) azaltıldı.
 
-Çıkış katmanında sigmoid aktivasyon fonksiyonu kullanıldı.
-
-Hiperparametre Optimizasyonu:
-
-keras-tuner ile filtre sayısı, dense katman nöron sayısı, dropout oranı ve optimizer seçenekleri test edilerek en iyi model seçildi.
