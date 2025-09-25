@@ -11,6 +11,7 @@ içerik: Orijinal veri setinde 277.524 adet 50x50 piksel histopatoloji görünt�
 Bu Projede Kullanılan Alt Küme: Her sınıftan 5000 örnek seçilerek toplam 10.000 görüntü ile eğitim yapılmıştır.
 
 Sınıflar:
+
 0: Benign (normal) hücreler
 
 1: Malignant (tümörlü) hücreler
