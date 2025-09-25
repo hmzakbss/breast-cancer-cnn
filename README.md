@@ -30,8 +30,11 @@ Model Değerlendirmesi: Eğitilen model, doğruluk (accuracy) ve kayıp (loss) g
 Elde Edilen Sonuçlar
 
 En İyi Modelin Doğruluk Oranı (Test Verisi): 
+
 Eğitim Sonrası Grafiklerin Analizi: 
+
 Sınıflandırma Raporu ve Karışıklık Matrisi Analizi: 
+
 
 Kaggle Notebook Linki
 
