@@ -1,63 +1,103 @@
-# breast-cancer-cnn
-PROJENİN AMACI
+🧬 Breast Cancer Classification with CNN
 
-Bu projenin amacı, mikroskop altında çekilmiş meme kanseri hücre görsellerini derin öğrenme yöntemleri kullanarak normal (benign) ve tümörlü (malignant) hücreler olarak sınıflandırmaktır. Böylece bilgisayar destekli teşhis sistemlerine katkı sağlayarak erken tanıya yardımcı olunması hedeflenmektedir.
+Bu proje, mikroskop altında çekilmiş meme kanseri hücre görsellerini derin öğrenme yöntemleriyle sınıflandırmayı amaçlamaktadır.
+Amaç, bilgisayar destekli teşhis sistemlerine katkı sağlayarak erken tanıya yardımcı olmak 🚑.
 
-VERİ SETİ HAKKINDA BİLGİ
+📊 Veri Seti
 
-Veri Seti Adı: [Breast Histopathology Images](https://www.kaggle.com/datasets/paultimothymooney/breast-histopathology-images)
+Veri Seti Adı: Breast Histopathology Images
 
-içerik: Orijinal veri setinde 277.524 adet 50x50 piksel histopatoloji görüntüsü bulunmaktadır.
-Bu Projede Kullanılan Alt Küme: Her sınıftan 5000 örnek seçilerek toplam 10.000 görüntü ile eğitim yapılmıştır.
+Toplam Görsel (Orijinal): 277.524 adet (50x50 piksel histopatoloji görüntüsü)
 
-Sınıflar:
+Bu Projede Kullanılan Alt Küme:
 
-0: Benign (normal) hücreler
+Her sınıftan 5000 örnek → Toplam 10.000 görüntü
 
-1: Malignant (tümörlü) hücreler
+🔹 Sınıflar
+Etiket	Açıklama
+0	Benign (Normal hücreler)
+1	Malignant (Tümörlü hücreler)
+⚙️ Kullanılan Yöntemler
 
-KULLANILAN YÖNTEMLER
+Veri Hazırlığı ve Ön İşleme
 
-Veri Hazırlığı ve Ön İşleme: Görüntüler, os ve pandas kütüphaneleri kullanılarak işlenmiş ve etiketlenmiştir. Dengeli bir veri seti oluşturulmuş ve veriler eğitim ile test kümelerine ayrılmıştır.
+os ve pandas kütüphaneleri ile görseller işlendi ve etiketlendi
 
-Veri çoğaltma (Data Augmentation): Modelin genelleme yeteneğini artırmak ve aşırı uydurmayı (overfitting) önlemek için döndürme, yatay/dikey çevirme ve yakınlaştırma gibi veri çoğaltma teknikleri uygulanmıştır.
+Dengeli veri seti oluşturuldu
 
-Model mimarisi: Proje için üç evrişim katmanı ve iki tam bağlantılı katman içeren temel bir CNN mimarisi oluşturulmuştur.
+Eğitim/Test kümelerine ayrıldı
 
-Hiperparametre Optimizasyonu (Bonus Adım): Keras Tuner kullanılarak en uygun model mimarisi otomatik olarak bulunmuştur. Filtre sayısı, yoğun katman nöron sayısı ve Dropout oranı gibi hiperparametreler optimize edilmiştir. Bu sayede modelin performansı artırılmıştır.
-Model Değerlendirmesi: Eğitilen model, doğruluk (accuracy) ve kayıp (loss) grafikleriyle, ayrıca ayrıntılı bir sınıflandırma raporu (precision, recall, f1-score) ve karışıklık matrisi (confusion matrix) ile değerlendirilmiştir.
+Veri Çoğaltma (Data Augmentation)
 
+Döndürme
 
-ELDE EDİLEN SONUÇLAR
+Yatay/Dikey çevirme
 
+Yakınlaştırma
 
-En İyi Modelin Doğruluk Oranı (Test Verisi):
+→ Amaç: Overfitting’i önlemek ve genelleme yeteneğini artırmak
 
+CNN Model Mimarisi
 
-Veri Setindeki Dağılımların Grafikleri: 
+3 Evrişim Katmanı (Conv2D)
 
-<img width="448" height="470" alt="image" src="https://github.com/user-attachments/assets/39fc6b9d-4475-41e2-ac26-e9aab04b0d27" />
+2 Tam Bağlantılı Katman (Dense)
 
+Aktivasyon: ReLU + Softmax
 
-Sınıflandırma Raporu Analizi:
+Dropout ile düzenlileştirme
 
- precision    recall  f1-score   support
+Hiperparametre Optimizasyonu (Bonus 🚀)
 
-      Benign       0.80      0.86      0.83      1000
-   Malignant       0.85      0.79      0.82      1000
+Keras Tuner ile filtre sayısı, nöron sayısı, dropout oranı optimize edildi
+
+En iyi model seçildi
+
+Model Değerlendirmesi
+
+Accuracy & Loss grafikleri
+
+Sınıflandırma raporu (Precision, Recall, F1-score)
+              precision    recall  f1-score   support
+
+    Benign       0.80      0.86      0.83      1000
+ Malignant       0.85      0.79      0.82      1000
 
     accuracy                           0.83      2000
    macro avg       0.83      0.83      0.83      2000
 weighted avg       0.83      0.83      0.83      2000
 
-Karışıklık Matrisi (Confusion Matrix):
+Karışıklık matrisi (Confusion Matrix)
 
+📈 Elde Edilen Sonuçlar
+✅ Test Verisi Doğruluk Oranı
 
-<img width="448" height="470" alt="image" src="https://github.com/user-attachments/assets/2ed5c3fc-baf9-4113-8bf4-e150abaf7e46" />
+%83
 
+🔹 Sınıf Dağılımları
+<img width="448" height="470" alt="data-distribution" src="https://github.com/user-attachments/assets/39fc6b9d-4475-41e2-ac26-e9aab04b0d27" />
 
+🔹 Karışıklık Matrisi
+<img width="448" height="470" alt="confusion-matrix" src="https://github.com/user-attachments/assets/2ed5c3fc-baf9-4113-8bf4-e150abaf7e46" />
 
-KAGGLE NOTEBOOK LİNKİ 
-https://www.kaggle.com/code/hamzaakbas/breast-cancer-cnn
-
-
+                CNN MODEL MİMARİSİ
+-------------------------------------------------
+ Girdi (50x50x3)  →  Renkli hücre görüntüsü
+-------------------------------------------------
+ Conv2D (32 filtre, 3x3, ReLU) 
+ MaxPooling2D (2x2)
+-------------------------------------------------
+ Conv2D (64 filtre, 3x3, ReLU)
+ MaxPooling2D (2x2)
+-------------------------------------------------
+ Conv2D (128 filtre, 3x3, ReLU)
+ MaxPooling2D (2x2)
+-------------------------------------------------
+ Flatten
+ Dense (128 nöron, ReLU)
+ Dropout (0.5)
+ Dense (64 nöron, ReLU)
+ Dropout (0.5)
+-------------------------------------------------
+ Çıkış Katmanı → Dense (2 sınıf, Softmax)
+-------------------------------------------------
