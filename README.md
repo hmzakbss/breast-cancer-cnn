@@ -48,8 +48,14 @@ Kaggle Notebook Linki
 <br>
 https://www.kaggle.com/code/hamzaakbas/breast-cancer-cnn
 <br>
+
+
+
 ROC Eğrisi
 <img width="702" height="549" alt="image" src="https://github.com/user-attachments/assets/d4883521-3f91-4e52-8c3f-aad4018ebb0b" />
+
+
+
 <br>
 Precision-Recall Eğrisi
 <br>
